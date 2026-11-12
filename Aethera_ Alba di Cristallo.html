@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Aethera: Alba di Cristallo</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef5fb;--pn:#fff;--tx:#0e1b2e;--mu:#587089;--ac:#0a7fae;--bd:#cfdeec;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1424;--pn:#12223a;--tx:#e8f1ff;--mu:#8ea6c4;--ac:#2cb8e8;--bd:#223a5c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1424;--pn:#12223a;--tx:#e8f1ff;--mu:#8ea6c4;--ac:#2cb8e8;--bd:#223a5c;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+.w{max-width:980px;margin:0 auto;padding:12px}
+h1,h2,.card .top b{font-family:Fraunces,Georgia,serif}h1{font-size:26px;margin:0;font-weight:800}h2{margin:0 0 6px;font-size:20px}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.gem{background:var(--pn);border:1px solid var(--bd);border-radius:20px;padding:4px 14px;font-weight:700;font-size:17px}
+nav{display:flex;gap:6px;overflow-x:auto;margin:10px 0}
+.btn,nav button{background:var(--pn);color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:8px 13px;font:inherit;cursor:pointer;white-space:nowrap}
+nav button.on,.btn.pri{background:var(--ac);color:#fff;border-color:var(--ac)}.btn:disabled{opacity:.45;cursor:not-allowed}
+.pn{background:var(--pn);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-bottom:12px}.mu{color:var(--mu)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px}
+.card{position:relative;border-radius:12px;padding:8px;color:#eef4ff;background:linear-gradient(155deg,#1c3a63,#0c1730);border:2px solid var(--c);cursor:pointer;user-select:none;min-height:172px;display:flex;flex-direction:column;transition:transform .15s}
+.card:hover{transform:translateY(-3px)}.top{display:flex;justify-content:space-between;font-size:12px;gap:4px}
+.art{flex:1;display:grid;place-items:center;font-size:46px}.rn{font-size:11px;color:var(--c);text-align:center}
+.st{display:flex;justify-content:space-around;font-size:13px;font-weight:700;margin-top:3px}
+.cnt{position:absolute;right:6px;bottom:32px;font-size:11px;background:#0008;border-radius:8px;padding:0 5px;font-style:normal}
+.new{position:absolute;left:-4px;top:-7px;background:#ef4444;color:#fff;font-size:11px;font-weight:700;border-radius:6px;padding:1px 6px}
+.r0{--c:#9fb0c4}.r1{--c:#4ade80}.r2{--c:#5eb0ff}.r3{--c:#c58bff}.r4{--c:#ffb04a;box-shadow:0 0 14px var(--c)}
+.r5{--c:#ff8be8;background:linear-gradient(155deg,#5a2285,#0e3a6e,#0c4a52);animation:gl 2.5s infinite alternate}
+@keyframes gl{from{box-shadow:0 0 14px #ff8be8}to{box-shadow:0 0 30px #6ee7ff;border-color:#6ee7ff}}
+.card.back{background:repeating-linear-gradient(45deg,#1c3a63 0 8px,#12294a 8px 16px);border-color:#4b6fa0;box-shadow:none;animation:none}.back>*{visibility:hidden}
+.card.sel{outline:3px solid #facc15}.card.dead{opacity:.25;pointer-events:none}.card.off{opacity:.3;filter:grayscale(1);cursor:default}
+.fl{animation:fl .4s}@keyframes fl{50%{background:#b91c1c;transform:scale(.93)}}
+.hp{height:5px;background:#0007;border-radius:3px;margin-top:3px;overflow:hidden}.hp i{display:block;height:100%;background:#4ade80}
+.row3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:540px;margin:8px auto}.log{max-height:100px;overflow:auto;font-size:13px;color:var(--mu);text-align:center}
+#arena{position:relative;height:300px;border-radius:14px;background:radial-gradient(#1c3a63,#0b1424);overflow:hidden}
+.star{position:absolute;top:-40px;font-size:34px;background:none;border:0;cursor:pointer;touch-action:manipulation;animation:fall var(--d,3s) linear forwards}@keyframes fall{to{transform:translateY(360px)}}
+.bar{display:flex;gap:14px;margin-bottom:8px;font-weight:700}
+.mem{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:360px}.mc{aspect-ratio:1;font-size:30px;border-radius:10px;border:1px solid var(--bd);background:var(--pn);color:var(--tx);cursor:pointer}.mc.up{background:var(--ac)}
+#ts{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#111c;color:#fff;padding:8px 18px;border-radius:20px;opacity:0;transition:opacity .3s;pointer-events:none}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:5px 8px;border-bottom:1px solid var(--bd);text-align:left;white-space:nowrap}.sc{overflow-x:auto}
+input,select{background:var(--pn);color:var(--tx);border:1px solid var(--bd);border-radius:8px;padding:7px 10px;font:inherit;max-width:100%}h3{margin:0 0 6px}
+.pks{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-bottom:12px}
+@media (prefers-reduced-motion:reduce){*:not(.star){animation:none!important}}
+</style></head><body><div class="w">
+<div class="hd"><h1>Aethera <span class="mu" style="font-weight:600;font-size:15px">Alba di Cristallo</span></h1><div class="gem">💎 <span id="g">0</span></div></div>
+<nav id="nv"><button data-t="home">🏠 Home</button><button data-t="pack">📦 Pacchetti</button><button data-t="col">🃏 Collezione</button><button data-t="bat">⚔️ Battaglia</button><button data-t="mg">🎮 Minigiochi</button><button data-t="info">ℹ️ Info</button><button data-t="adm" id="nadm" hidden>🛠️ Admin</button></nav>
+<main id="v"></main></div><div id="ts"></div>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],V=$("#v");
+const R=["Comune","Non comune","Rara","Epica","Leggendaria","Mitica"],E=["🔥","💧","⛰️","🌪️"],ADV={0:3,3:2,2:1,1:0};
+const BASE=[[3,8],[4,10],[6,13],[8,17],[11,22],[14,28]],VAL=[1,2,5,12,30,80],CAP={m:150,b:200},RW=[8,15,25,40,60],LV=["Facile","Medio","Difficile","Esperto","Incubo"],REQ=[0,3,5,5,5],LO=[0,1,2,3,4],HI=[1,3,5,5,5],BO=[1,1,1.1,1.25,1.5],SM=[.2,.55,.95,1,1];
+const PK=[{n:"Normale",e:"📦",p:100,k:5,m:1,w:[55,25,11,6,2.6,.4]},{n:"Premium",e:"✨",p:300,k:5,m:2,w:[10,35,30,16,7,2]}];
+const G=["Scintilla|✨|0;Goccia|💧|1;Sassolino|🪨|2;Brezza|🍃|3;Lucertola Ardente|🦎|0;Rana di Palude|🐸|1;Topo di Cava|🐀|2;Gufetto|🦉|3;Fiammella|🕯️|0;Pesce Palla|🐡|1;Scarabeo|🪲|2;Passero|🐦|3;Volpe di Brace|🦊|0;Granchio|🦀|1;Riccio di Roccia|🦔|2;Pipistrello|🦇|3",
+"Lupo di Cenere|🐺|0;Tartaruga Marina|🐢|1;Golem di Argilla|🗿|2;Falco Tempestoso|🦅|3;Cinghiale Infuocato|🐗|0;Squalo Fantasma|🦈|1;Orso Montano|🐻|2;Cigno Boreale|🦢|3;Salamandra|🦎|0;Polpo Abissale|🐙|1",
+"Fenice Minore|🐓|0;Kraken Cucciolo|🦑|1;Titano di Pietra|🏔️|2;Grifone|🦅|3;Cavaliere Ardente|⚔️|0;Sirena|🧜|1;Spirito del Vento|🌀|3",
+"Drago Rosso|🐉|0;Leviatano|🐋|1;Colosso di Giada|🗻|2;Arcangelo della Tempesta|⚡|3","Fenice Eterna|☄️|0;Idra Cristallina|🐲|1","Aethra, Madre delle Stelle|🌌|3"];
+const N="Lumaca Salmastra|🐌|1|0;Ape di Cristallo|🐝|3|0;Formica Minatrice|🐜|2|0;Carbone Vivo|🌋|0|0;Ranocchio Lunare|🌙|1|0;Coniglio di Sabbia|🐇|2|0;Farfalla Ventosa|🦋|3|0;Pesce Corallo|🐠|1|0;Gallo Scintilla|🐔|0|0;Talpa Scavatrice|🐁|2|0;Anatra di Laguna|🦆|1|0;Piuma Danzante|🪶|3|0;Cervo di Muschio|🦌|2|1;Tigre di Brace|🐯|0|1;Delfino Argenteo|🐬|1|1;Pappagallo Tuono|🦜|3|1;Mammut di Pietra|🦣|2|1;Scorpione Rovente|🦂|0|1;Foca Glaciale|🦭|1|1;Nube Vivente|☁️|3|1;Minotauro di Roccia|🐂|2|2;Basilisco Ardente|🐍|0|2;Tritone Guerriero|🔱|1|2;Roc del Monsone|🦅|3|2;Golem di Magma|🌋|0|2;Unicorno d’Acqua|🦄|1|2;Cerbero|🐕|0|3;Behemoth|🦏|2|3;Serpente Marino|🐉|1|3;Sfinge dei Venti|🦁|3|3;Titano del Sole|☀️|0|4;Regina degli Abissi|🔱|1|4;Guardiano del Cielo|🌈|3|4;Chronos, Custode del Tempo|⏳|2|5";
+const C=[],add=(x,r)=>{const[n,i,e,q]=x.split("|"),k=C.length,rr=r??+q,b=BASE[rr];C.push({id:k,n,i,e:+e,r:rr,a:b[0]+(k*7%3)-1,h:b[1]+(k*5%4)-1})};
+G.forEach((s,r)=>s.split(";").forEach(x=>add(x,r)));N.split(";").forEach(x=>add(x));
+const K="aethera_v1",DEF={g:200,col:{},bonus:"",st:0,cap:{d:"",m:0,b:0},op:0,w:0,adm:0,free:0,rec:{s:0,m:0,d:0},bw:[0,0,0,0,0]};let S=JSON.parse(JSON.stringify(DEF));
+try{const x=JSON.parse(localStorage.getItem(K));if(x)S={...S,...x}}catch(e){}
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}},today=()=>new Date().toLocaleDateString("sv"),upd=()=>{$("#g").textContent=S.g;$("#nadm").hidden=!S.adm};
+const cp=()=>{if(S.cap.d!==today())S.cap={d:today(),m:0,b:0};return S.cap};
+function grant(k,a){const c=cp(),got=Math.max(0,Math.min(a,CAP[k]-c[k]));c[k]+=got;S.g+=got;save();upd();return got}
+function toast(t){const e=$("#ts");e.textContent=t;e.style.opacity=1;setTimeout(()=>e.style.opacity=0,1800)}
+let TM=[],B=null,SEL=new Set(),DIF=0;const un=i=>i==0||S.bw[i-1]>=REQ[i];const clr=()=>{TM.forEach(clearInterval);TM=[]},iv=(f,t)=>TM.push(setInterval(f,t));
+function cardEl(c,n=0,x="",hp=null,nw=false){return `<div class="card r${c.r} ${x}" data-id="${c.id}">${nw?'<span class="new">Nuova!</span>':""}<div class="top"><b>${c.n}</b><span>${E[c.e]}</span></div><div class="art">${c.i}</div><div class="rn">${R[c.r]}</div><div class="st"><span>⚔️${c.a}</span><span>❤️${hp==null?c.h:hp}</span></div>${hp!=null?`<div class="hp"><i style="width:${Math.max(0,hp/c.h*100)}%"></i></div>`:""}${n>1?`<i class="cnt">×${n}</i>`:""}</div>`}
+const VW={home,pack,col,bat,mg,info,adm};
+function tab(n){clr();B=null;$$("#nv button").forEach(b=>b.classList.toggle("on",b.dataset.t==n));VW[n]()}
+$("#nv").onclick=e=>{const t=e.target.dataset.t;t&&tab(t)};
+function home(){const c=cp(),ok=S.bonus!==today(),own=Object.keys(S.col).length;
+V.innerHTML=`<div class="pn"><h2>Benvenuto, collezionista</h2><p>L’espansione <b>Alba di Cristallo</b> ha ${C.length} carte in 6 rarità. Apri pacchetti (da 100 💎), completa l’album e sfida i bot. Probabilità e dettagli sono nel menu Info. Ogni carta ha un elemento: 🔥 batte 🌪️, 🌪️ batte ⛰️, ⛰️ batte 💧, 💧 batte 🔥.</p><button class="btn pri" id="bn" ${ok?"":"disabled"}>${ok?"🎁 Ritira il bonus giornaliero":"✅ Bonus già ritirato oggi"}</button> <span class="mu">Giorni consecutivi: ${S.st}. Più giorni di fila, più gemme (fino a +25).</span></div>
+<div class="pn"><h2>Guadagni di oggi</h2><p>🎮 Minigiochi: ${c.m} su ${CAP.m} 💎<br>⚔️ Battaglie: ${c.b} su ${CAP.b} 💎</p><p class="mu">Carte in collezione: ${own} su ${C.length}. Pacchetti aperti: ${S.op}. Vittorie: ${S.w}.</p></div><button class="btn" id="rs">Azzera i progressi</button>`;
+$("#bn").onclick=()=>{const y=new Date(Date.now()-864e5).toLocaleDateString("sv");S.st=S.bonus===y?S.st+1:1;S.bonus=today();const r=40+Math.min(S.st-1,5)*5;S.g+=r;save();upd();home();toast("+"+r+" 💎")};
+let rc=0;$("#rs").onclick=function(){if(!rc){rc=1;this.textContent="Sicuro? Tocca ancora";return}S=JSON.parse(JSON.stringify(DEF));save();upd();home()}}
+function pack(){V.innerHTML=`<div class="pks">${PK.map((p,i)=>`<div class="pn" style="margin:0"><h2>${p.e} ${p.n}</h2><p class="mu">${p.k} carte. L’ultima è ${R[p.m]} o migliore.</p><button class="btn pri op" data-i="${i}" ${S.free||S.g>=p.p?"":"disabled"}>Apri per ${p.p} 💎</button></div>`).join("")}<div class="pn" style="margin:0;opacity:.7"><h2>❄️ Natale</h2><p class="mu">Pacchetto evento: si sblocca con i fiocchi di neve, la valuta dell’evento di Natale. In arrivo con l’evento.</p><button class="btn" disabled>🔒 Non ancora disponibile</button></div></div><div class="pn"><button class="btn" id="ra">Rivela tutte</button> <span class="mu">Tocca le carte per scoprirle. Le probabilità sono nel menu Info.</span></div><div class="grid" id="pk"></div>`;
+$$(".op").forEach(b=>b.onclick=()=>openPack(+b.dataset.i));$("#ra").onclick=()=>$$("#pk .card").forEach(c=>c.classList.remove("back"));$("#pk").onclick=e=>{const c=e.target.closest(".card");c&&c.classList.remove("back")}}
+const roll=w=>{let x=Math.random()*100,i=0;while(i<5&&x>=w[i]){x-=w[i];i++}return i};
+function draw(w,min){let r;do r=roll(w);while(r<min);const p=C.filter(c=>c.r==r);return p[Math.random()*p.length|0]}
+function openPack(i){const p=PK[i];if(!S.free&&S.g<p.p){toast("Gemme insufficienti: guadagnale con bonus, minigiochi e battaglie");return}
+if(!S.free)S.g-=p.p;S.op++;const cs=[...Array(p.k-1)].map(()=>draw(p.w,0));cs.push(draw(p.w,p.m));cs.sort((a,b)=>a.r-b.r);let h="";cs.forEach(c=>{const nw=!S.col[c.id];S.col[c.id]=(S.col[c.id]||0)+1;h+=cardEl(c,0,"back",null,nw)});save();upd();$$(".op").forEach((b,j)=>b.disabled=!(S.free||S.g>=PK[j].p));$("#pk").innerHTML=h}
+function col(){const dup=C.reduce((s,c)=>s+Math.max(0,(S.col[c.id]||0)-1)*VAL[c.r],0),own=Object.keys(S.col).length;
+V.innerHTML=`<div class="pn"><b>${own} su ${C.length}</b> carte raccolte. <button class="btn" id="cv" ${dup?"":"disabled"}>Converti i doppioni (+${dup} 💎)</button></div><div class="grid">${[...C].sort((a,b)=>b.r-a.r||a.id-b.id).map(c=>S.col[c.id]?`<div>${cardEl(c,S.col[c.id])}${S.col[c.id]>1?`<button class="btn sl" style="width:100%;margin-top:4px;padding:4px" data-id="${c.id}">Vendi 1 (+${VAL[c.r]} 💎)</button>`:""}</div>`:`<div class="card off r${c.r}"><div class="art">?</div><div class="rn">${R[c.r]}</div></div>`).join("")}</div>`;
+$$(".sl").forEach(b=>b.onclick=()=>{const i=+b.dataset.id;if(S.col[i]>1){S.col[i]--;S.g+=VAL[C[i].r];save();upd();const y=scrollY;col();scrollTo(0,y)}});
+$("#cv").onclick=()=>{C.forEach(c=>{if(S.col[c.id]>1)S.col[c.id]=1});S.g+=dup;save();upd();col();toast("+"+dup+" 💎")}}
+function bat(){const own=C.filter(c=>S.col[c.id]).sort((a,b)=>b.r-a.r||a.id-b.id);
+V.innerHTML=`<div class="pn"><h2>Battaglia contro i bot</h2><p class="mu">Scegli 3 carte. Vantaggio elementale: danno ×1,5. Svantaggio: ×0,75. Ai livelli alti i bot hanno carte più rare e statistiche potenziate.</p>${LV.map((n,i)=>{const ok=un(i);return `<button class="btn dif ${i==DIF?"pri":""}" data-d="${i}" ${ok?"":"disabled"}>${ok?"":"🔒 "}${n} (+${RW[i]} 💎)</button>`}).join(" ")}<p class="mu">${(()=>{const i=LV.findIndex((_,j)=>!un(j));return i<0?"Tutti i livelli sono sbloccati.":`Per sbloccare ${LV[i]} vinci ${REQ[i]} volte a livello ${LV[i-1]} (${S.bw[i-1]} su ${REQ[i]}).`})()}</p><p>Mazzo: <b id="sc">${SEL.size}</b> su 3 <button class="btn pri" id="go" ${SEL.size==3?"":"disabled"}>Combatti!</button></p></div><div class="grid" id="dk">${own.map(c=>cardEl(c,S.col[c.id],SEL.has(c.id)?"sel":"")).join("")}</div>`;
+$$(".dif").forEach(b=>b.onclick=()=>{DIF=+b.dataset.d;bat()});
+$("#dk").onclick=e=>{const c=e.target.closest(".card");if(!c)return;const i=+c.dataset.id;if(SEL.has(i))SEL.delete(i);else if(SEL.size<3)SEL.add(i);c.classList.toggle("sel",SEL.has(i));$("#sc").textContent=SEL.size;$("#go").disabled=SEL.size!=3};
+$("#go").onclick=()=>{const pool=C.filter(c=>c.r>=LO[DIF]&&c.r<=HI[DIF]),mk=(c,p,i)=>{const m=p=="e"?BO[DIF]:1,h=Math.round(c.h*m);return {...c,id:p+i,a:Math.round(c.a*m),h,hp:h}};
+B={p:[...SEL].map((i,k)=>mk(C[i],"p",k)),e:[0,1,2].map(k=>mk(pool[Math.random()*pool.length|0],"e",k)),sel:null,t:"p",log:["Tocca una tua carta, poi un bersaglio nemico."],fl:null,end:""};bt()}}
+const mult=(a,d)=>ADV[a.e]==d.e?1.5:ADV[d.e]==a.e?.75:1;
+function hit(a,d){const m=mult(a,d),x=Math.max(1,Math.round(a.a*m));d.hp=Math.max(0,d.hp-x);B.fl=d.id;B.log.push(`${a.i} ${a.n} colpisce ${d.i} ${d.n}: −${x}${m>1?" (efficace)":m<1?" (resistito)":""}${d.hp?"":" ☠️"}`)}
+function bt(){const u=a=>a.map(c=>cardEl(c,0,(c.hp<=0?"dead ":"")+(B.sel==c.id?"sel ":"")+(B.fl==c.id?"fl":""),c.hp)).join("");
+V.innerHTML=`<div class="row3" id="en">${u(B.e)}</div><div class="log">${B.log.slice(-4).map(l=>`<div>${l}</div>`).join("")}</div><div class="row3" id="pl">${u(B.p)}</div>${B.end?`<div class="pn"><b>${B.end}</b> <button class="btn pri" id="bk">Torna al mazzo</button></div>`:""}`;B.fl=null;
+const id=e=>e.target.closest(".card")?.dataset.id;
+$("#pl").onclick=e=>{const k=id(e);if(B.t=="p"&&!B.end&&k){B.sel=k;bt()}};
+$("#en").onclick=e=>{const k=id(e);if(B.t!="p"||B.end||!B.sel||!k)return;hit(B.p.find(x=>x.id==B.sel),B.e.find(x=>x.id==k));B.sel=null;
+if(!B.e.some(x=>x.hp>0))return fin(true);B.t="b";bt();const b=B;setTimeout(()=>{if(B===b)bot()},800)};
+if(B.end)$("#bk").onclick=bat}
+function bot(){const T=B.p.filter(x=>x.hp>0),sm=Math.random()<SM[DIF];let best,bs=-1;
+B.e.filter(x=>x.hp>0).forEach(a=>T.forEach(d=>{const x=Math.round(a.a*mult(a,d)),s=sm?x+(x>=d.hp?100:0):Math.random();if(s>bs){bs=s;best=[a,d]}}));
+hit(...best);if(!B.p.some(x=>x.hp>0))return fin(false);B.t="p";bt()}
+function fin(w){B.t="x";if(w){S.w++;S.bw[DIF]++;const r=RW[DIF],g=grant("b",r);B.end=`Vittoria! +${g} 💎${g<r?" (limite giornaliero raggiunto)":""}${DIF<4&&S.bw[DIF]==REQ[DIF+1]?` Hai sbloccato il livello ${LV[DIF+1]}!`:""}`}else{B.end="Sconfitta. Cambia mazzo e riprova."}save();bt()}
+const INV=Object.fromEntries(Object.entries(ADV).map(([a,d])=>[d,+a])),GM=[["⭐","Stelle cadenti","Raccogli le stelle che cadono ed evita le comete. Fino a 50 💎.",stars,"s"],["🧠","Memoria elementale","Trova tutte le coppie. A livello difficile c’è il tempo. Fino a 55 💎.",memory,"m"],["⚔️","Duello elementale","Scegli l’elemento che batte quello mostrato, più in fretta che puoi. Fino a 45 💎.",duel,"d"]];
+function mg(){const c=cp();V.innerHTML=`<div class="pn"><h2>Minigiochi</h2><p>Oggi hai guadagnato <b>${c.m} su ${CAP.m}</b> 💎. ${c.m>=CAP.m?"Limite raggiunto: puoi comunque giocare per divertimento.":"Il premio dipende dal punteggio e dalla difficoltà."}</p></div><div class="pks">${GM.map((g,i)=>`<div class="pn" style="margin:0"><h2>${g[0]} ${g[1]}</h2><p class="mu">${g[2]}</p><p>Record: <b>${S.rec[g[4]]}</b></p><button class="btn pri gm" data-i="${i}">Gioca</button></div>`).join("")}</div><div id="mgv" style="margin-top:12px"></div>`;
+$$(".gm").forEach(b=>b.onclick=()=>lvl(+b.dataset.i))}
+function lvl(i){const g=GM[i];$("#mgv").innerHTML=`<div class="pn"><b>${g[1]}</b>: scegli la difficoltà<p>${["Facile","Normale","Difficile"].map((n,d)=>`<button class="btn lv" data-d="${d}">${n}</button>`).join(" ")}</p></div>`;$$(".lv").forEach(b=>b.onclick=()=>g[3](+b.dataset.d))}
+function endg(r,t,k,sc){clr();const g=grant("m",r),nr=sc>S.rec[k];if(nr)S.rec[k]=sc;save();$("#mgv").innerHTML=`<div class="pn"><p>${t}${nr?" <b>Nuovo record!</b>":""}</p><p>Premio: <b>+${g} 💎</b>${g<r?" (limite giornaliero raggiunto)":""}</p><button class="btn pri" id="ag">Torna ai minigiochi</button></div>`;$("#ag").onclick=mg}
+function stars(d){clr();let sc=0,t=20,cb=0;const MX=[20,35,50][d];
+$("#mgv").innerHTML=`<div class="bar"><span><b id="t">20</b> s</span><span>⭐ <b id="sc">0</b></span><span>Combo ×<b id="cb">1</b></span></div><div id="arena"></div><p class="mu">⭐ +1, 🌟 +3, ☄️ −3 e azzera la combo. Una stella persa azzera la combo. Ogni 5 di fila il moltiplicatore sale (fino a ×3).</p>`;
+const ar=$("#arena"),mul=()=>Math.min(3,1+(cb/5|0)),show=()=>{$("#sc").textContent=sc;$("#cb").textContent=mul()};
+iv(()=>{const r=Math.random(),k=r<[.12,.18,.25][d]?"☄️":r<.3?"🌟":"⭐",s=document.createElement("button"),du=Math.max(1.4,3-(20-t)*.08-d*.3);
+s.className="star";s.textContent=k;s.style.left=Math.random()*85+"%";s.style.setProperty("--d",du+"s");
+s.onpointerdown=()=>{if(!s.isConnected)return;if(k=="☄️"){sc=Math.max(0,sc-3);cb=0}else{cb++;sc+=(k=="🌟"?3:1)*mul()}show();s.remove()};
+ar.append(s);setTimeout(()=>{if(s.isConnected){if(k!="☄️")cb=0;s.remove();show()}},du*1000)},[620,520,430][d]);
+iv(()=>{t--;$("#t").textContent=t;if(t<=0){ar.innerHTML="";endg(Math.min(MX,Math.round(sc*[.7,.9,1.1][d])),"Punti: "+sc+".","s",sc)}},1000)}
+function duel(d){clr();let sc=0,t=[25,20,15][d],cb=0,c;const MX=[20,30,45][d];
+$("#mgv").innerHTML=`<div class="bar"><span><b id="t">${t}</b> s</span><span>Punti <b id="sc">0</b></span><span>Serie <b id="cb">0</b></span></div><div class="pn" style="text-align:center"><div id="q" style="font-size:56px"></div><p id="qn" class="mu"></p><div id="ans">${E.map((x,i)=>`<button class="btn" style="font-size:28px;margin:4px" data-e="${i}">${x}</button>`).join("")}</div><p class="mu">Ogni risposta giusta vale 1 punto, 2 dopo 5 di fila. Una sbagliata toglie 1 punto.</p></div>`;
+const nx=()=>{c=C[Math.random()*C.length|0];$("#q").textContent=c.i+E[c.e];$("#qn").textContent=c.n+": quale elemento lo batte?"};
+$("#ans").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(+b.dataset.e==INV[c.e]){cb++;sc+=cb>=5?2:1}else{cb=0;sc=Math.max(0,sc-1)}$("#sc").textContent=sc;$("#cb").textContent=cb;nx()};
+nx();iv(()=>{t--;$("#t").textContent=t;if(t<=0)endg(Math.min(MX,Math.round(sc*[.8,1,1.2][d])),"Punti: "+sc+".","d",sc)},1000)}
+function memory(d){clr();const ic=["🔥","💧","⛰️","🌪️","🌌","⚡","❄️","🌙"],n=[4,6,8][d],MX=[20,35,55][d],dk=[...ic.slice(0,n),...ic.slice(0,n)].sort(()=>Math.random()-.5);let op=[],mv=0,dn=0,lk=false,t=d==2?60:0;
+const fin=w=>{const r=w?Math.max(Math.round(MX*.2),MX-(mv-n)*Math.max(2,Math.round(MX/12))):Math.round(MX*.3*dn/n);endg(r,w?"Completato in "+mv+" mosse.":"Tempo scaduto: "+dn+" coppie su "+n+".","m",r)};
+$("#mgv").innerHTML=`<div class="bar"><span>Mosse: <b id="mv">0</b></span>${d==2?'<span><b id="t">60</b> s</span>':""}</div><div class="mem">${dk.map((x,i)=>`<button class="mc" data-i="${i}">?</button>`).join("")}</div>`;
+if(t)iv(()=>{t--;$("#t").textContent=t;if(t<=0)fin(0)},1000);
+$$(".mc").forEach(b=>b.onclick=()=>{if(lk||b.classList.contains("up"))return;b.classList.add("up");b.textContent=dk[b.dataset.i];op.push(b);if(op.length<2)return;mv++;$("#mv").textContent=mv;const[x,y]=op;
+if(dk[x.dataset.i]==dk[y.dataset.i]){op=[];if(++dn==n)fin(1)}else{lk=true;setTimeout(()=>{x.classList.remove("up");y.classList.remove("up");x.textContent=y.textContent="?";op=[];lk=false},700)}})}
+function info(){const rs=R.map((r,i)=>{const cs=C.filter(c=>c.r==i),A=cs.map(c=>c.a),H=cs.map(c=>c.h);return `<tr><td>${r}</td><td>${cs.length}</td><td>${Math.min(...A)}–${Math.max(...A)}</td><td>${Math.min(...H)}–${Math.max(...H)}</td><td>${VAL[i]} 💎</td></tr>`}).join("");
+V.innerHTML=`<div class="pn"><h2>Probabilità dei pacchetti</h2><div class="sc"><table><tr><th>Pacchetto</th><th>Prezzo</th><th>Carte</th>${R.map(r=>`<th>${r}</th>`).join("")}<th>Ultima carta</th></tr>${PK.map(p=>`<tr><td>${p.e} ${p.n}</td><td>${p.p} 💎</td><td>${p.k}</td>${p.w.map(x=>`<td>${x}%</td>`).join("")}<td>da ${R[p.m]}</td></tr>`).join("")}</table></div><p class="mu">Le percentuali valgono per ogni carta. L’ultima carta viene estratta tra la rarità indicata e quelle superiori. Il pacchetto di Natale, con i fiocchi di neve, arriverà con l’evento.</p></div>
+<div class="pn"><h2>Le carte</h2><div class="sc"><table><tr><th>Rarità</th><th>Carte</th><th>Attacco</th><th>Vita</th><th>Doppione</th></tr>${rs}</table></div><p class="mu">In totale ${C.length} carte. Un doppione si converte in gemme solo se hai più di una copia, e vale poco, così aprire pacchetti non è una fonte di guadagno.</p></div>
+<div class="pn"><h2>Come guadagnare gemme</h2><p>Bonus giornaliero: 40 💎, più 5 per ogni giorno consecutivo (fino a 65). Minigiochi: fino a ${CAP.m} 💎 al giorno. Battaglie contro i bot: ${RW.join(", ")} 💎 a vittoria (${LV.join(", ").toLowerCase()}), fino a ${CAP.b} 💎 al giorno. Ogni livello di battaglia si sblocca vincendo più volte a quello precedente (${REQ.slice(1).join(", ")} vittorie). I limiti si azzerano a mezzanotte.</p></div>
+<div class="pn"><h2>Elementi</h2><p>🔥 batte 🌪️, 🌪️ batte ⛰️, ⛰️ batte 💧, 💧 batte 🔥. Il vantaggio fa ×1,5 di danno, lo svantaggio ×0,75.</p></div>
+<div class="pn"><h2>Codice segreto</h2><input id="cd" placeholder="Scrivi un codice" autocomplete="off"> <button class="btn" id="cb">Usa</button></div>`;
+$("#cb").onclick=()=>{if($("#cd").value.trim().toLowerCase()=="ornitorinco"){S.adm=1;save();upd();toast("Pannello admin sbloccato");tab("adm")}else toast("Codice non valido")}}
+function adm(){if(!S.adm)return tab("home");
+V.innerHTML=`<div class="pn"><h2>Pannello admin</h2><p>Gemme: <b>${S.g}</b></p><input id="ga" type="number" value="1000"> <button class="btn pri" id="gb">Aggiungi gemme</button> <span class="mu">(valori negativi per toglierle)</span></div>
+<div class="pn"><h3>Carte</h3><select id="cs">${C.map(c=>`<option value="${c.id}">${c.id+1}. ${c.n} (${R[c.r]})</option>`).join("")}</select> <input id="cq" type="number" value="1" min="1" style="width:70px"> <button class="btn" id="cg">Aggiungi carta</button><p><button class="btn" id="ca">Sblocca tutte le carte</button> <button class="btn" id="cl">Sblocca tutti i livelli</button></p></div>
+<div class="pn"><h3>Sistema</h3><label><input type="checkbox" id="fr" ${S.free?"checked":""}> Pacchetti gratis</label><p><button class="btn" id="rl">Azzera limiti giornalieri e bonus</button> <button class="btn" id="lk">Blocca il pannello</button></p></div>`;
+$("#gb").onclick=()=>{S.g=Math.max(0,S.g+(+$("#ga").value||0));save();upd();adm()};
+$("#cg").onclick=()=>{const i=+$("#cs").value,q=Math.max(1,+$("#cq").value||1);S.col[i]=(S.col[i]||0)+q;save();toast("Carta aggiunta")};
+$("#ca").onclick=()=>{C.forEach(c=>{S.col[c.id]=S.col[c.id]||1});save();toast("Tutte le carte sbloccate")};
+$("#cl").onclick=()=>{S.bw=[9,9,9,9,9];save();toast("Livelli sbloccati")};
+$("#fr").onchange=e=>{S.free=e.target.checked?1:0;save()};
+$("#rl").onclick=()=>{S.cap={d:"",m:0,b:0};S.bonus="";S.st=0;save();toast("Limiti azzerati")};
+$("#lk").onclick=()=>{S.adm=0;S.free=0;save();upd();tab("home")}}
+upd();tab("home");
+</script></body></html>
